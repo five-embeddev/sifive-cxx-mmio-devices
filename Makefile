@@ -13,19 +13,17 @@ SRC_DIR=${OUT_PATH}/${TARGET_DEVICE}
 all : \
 		${SRC_DIR}/device.hpp \
 		${SRC_DIR}/metal.default.lds \
-
-
-#		build
+		build
 
 clean : \
 		${BUILD_DIR}/Makefile
-	${MAKE} -C build clean
+	${MAKE} -C ${BUILD_DIR} clean
 
 realclean :
 	rm -f ${BUILD_DIR}/Makefile
 	rm -rf ${BUILD_DIR}/CMakeFiles
-	rm -r ${BUILD_DIR}/CMakeCache.txt
-	rm -r ${BUILD_DIR}/cmake_install.txt
+	rm -f ${BUILD_DIR}/CMakeCache.txt
+
 
 build : ${BUILD_DIR}/Makefile
 	${MAKE} -C ${BUILD_DIR}/
